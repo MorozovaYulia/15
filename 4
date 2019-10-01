@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    const int N = 10;
+    int arr[N];
+    int max, min, nMax, nMin;
+ 
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
+ 
+    max = arr[0];
+    min = arr[0];
+ 
+    for (int i = 0; i < N; i++)
+        if (max < arr[i]) {
+            max = arr[i];
+            nMax = i;
+        }
+    for (int i = 0; i < N; i++)
+        if (min > arr[i]) {
+            min = arr[i];
+            nMin = i;
+        }
+ 
+    if (nMax > nMin)
+        for (int i = nMin + 1; i < nMax; i++)
+            arr[i] = 0;
+    else
+        for (int i = nMax + 1; i < nMin; i++)
+            arr[i] = 0;
+ 
+    for (int i = 0; i < N; i++)
+        cout << arr[i] << " ";
+}
