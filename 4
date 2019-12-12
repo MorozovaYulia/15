@@ -3,33 +3,28 @@ using namespace std;
 int main()
 {
     const int N = 10;
-    int arr[N];
-    int max, min, nMax, nMin;
- 
+    int A[N];
+    int max, min, Max, Min;
     for (int i = 0; i < N; i++)
-        cin >> arr[i];
- 
-    max = arr[0];
-    min = arr[0];
- 
+        cin >> A[i];
+    max = A[0];
+    min = A[0];
     for (int i = 0; i < N; i++)
-        if (max < arr[i]) {
-            max = arr[i];
-            nMax = i;
+        if (max < A[i]) {
+            max = A[i];
+            Max = i;
         }
     for (int i = 0; i < N; i++)
-        if (min > arr[i]) {
-            min = arr[i];
-            nMin = i;
+        if (min > A[i]) {
+            min = A[i];
+            Min = i;
         }
- 
-    if (nMax > nMin)
-        for (int i = nMin + 1; i < nMax; i++)
-            arr[i] = 0;
+    if (Max > Min)
+        for (int i = Min + 1; i < Max; i++)
+            A[i] = 0;
     else
-        for (int i = nMax + 1; i < nMin; i++)
-            arr[i] = 0;
- 
+        for (int i = Max + 1; i < Min; i++)
+            A[i] = 0;
     for (int i = 0; i < N; i++)
-        cout << arr[i] << " ";
+        cout << A[i] << " ";
 }
